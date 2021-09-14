@@ -6,7 +6,7 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="335dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button" />
 
@@ -15,6 +15,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/second_activity_button" />
+
+    <Button
+        android:id="@+id/sendBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Send" />
 
     <TextView
         android:id="@+id/textView"
