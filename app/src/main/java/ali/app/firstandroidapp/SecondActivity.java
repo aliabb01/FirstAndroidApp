@@ -25,10 +25,12 @@ public class SecondActivity extends AppCompatActivity {
         List<ListItem> items = new ArrayList<>();
 
         Intent intent = getIntent();
+        List<ListItem> newItems = intent.getParcelableArrayListExtra("things");
+
         if(intent.getBooleanExtra("flag", true)) {
-            /*
-             * Case 1
-             */
+
+             /** Case 1*/
+
 
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.baseline_3d_rotation_black_48dp);
             items.add(new ListItem("Jack", bitmap, "Mathematics, Chemistry"));
@@ -41,9 +43,9 @@ public class SecondActivity extends AppCompatActivity {
             bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.baseline_accessibility_black_48dp);
             items.add(new ListItem("Sam", bitmap, "Mathematics, Physics"));
         } else {
-            /*
-             * Case 2
-             */
+
+             /** Case 2*/
+
 
             Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.baseline_3d_rotation_black_48dp);
 
@@ -85,6 +87,10 @@ public class SecondActivity extends AppCompatActivity {
                     bitmap,
                     "Geography is a field of science devoted to the study of lands, the features, the inhabitants, and the phenomena of Earth."
             ));
+        }
+
+        if (newItems != null) {
+            items.addAll(newItems);
         }
 
         adapter = new ListAdapter(this, items);
